@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- W3shool -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
@@ -13,31 +14,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <title>About</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
 </head>
 <body>
-<div class="text-center">
-    <h1>Co&Tom</h1>
-    <p>Mijn ik en dier</p>
-</div>
 
-<div th:replace="~{navigatie::#navbar}"></div>
-
-
-
-    <h2>Wie zijn we?</h2>
-    <p><emp>Tim en Jefrey:</emp>We zijn een dierenwinkel gespecializeerd in voeder en diensten voor thuisdieren zoals habitat en speelgoed. We zorgen voor het welzijn van de dieren en we maken het leven van onze klanten gemakkelijker door onze diensten online te zitten.</p>
-    <h2>Adress</h2>
-    <p>Nijverheid 170</p>
-    <p>B-1070 Brussel</p>
-    <h2>Contact</h2>
-        <p>Telefoon:</p>
-        <p>Email:<a href="test@test.be"></a></p>
-
-
+<table>
+    <thead>
+    <tr>
+        <th>Naam</th>
+        <th>Prijs</th>
+        <th>Merk</th>
+        <th>Categorie</th>
+        <th>Beschrijving</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${artikel.naam}"></td>
+        <td th:text="${artikel.prijs}"></td>
+        <td th:text="${artikel.merk}"></td>
+        <td th:text="${artikel.cat}"></td>
+        <td th:text="${artikel.beschrijving}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
-<footer>
-    &copy;copyright 2018
-</footer>
-
 </html>

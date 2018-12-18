@@ -10,20 +10,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
-public class OrderController {
 
-    @Autowired
-    private ArtikelRepository artikelRepository;
 
-    @ModelAttribute("all")
-    public Iterable<Artikel> findAll() {
-        return artikelRepository.findAll();
-    }
+    @Controller
+    public class DetailsController {
+        @Autowired
+        ArtikelRepository artikelRepository;
 
-    @RequestMapping(value = "/order", method = RequestMethod.GET)
-    public String showOrder(ModelMap map) {
-        return "order";
-    }
+        @RequestMapping(value = {"/details/{id}"}, method = RequestMethod.GET)
+        public String showDetails(@PathVariable(name ="id") int identifier, ModelMap map) {
 
+            Artikel detailArtikel = artikelRepository.findById(identifier).get();
+            map.addAttribute("artikel",detailArtikel);
+
+            return "details";
+        }
 }

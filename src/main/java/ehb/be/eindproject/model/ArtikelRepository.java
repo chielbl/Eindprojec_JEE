@@ -5,6 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ArtikelRepository extends CrudRepository<Artikel,Integer> {
-
-    public List<Artikel> findByCat(String categorie);
+    public List<Artikel> findByCat(String cat);
 }
