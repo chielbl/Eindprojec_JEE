@@ -13,18 +13,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <title>Title</title>
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Navigatie</title>
 </head>
 <body>
 <nav id="navbar" th:fragment="navbar">
+    <div class="text-center">
+        <h1>Co&Tom</h1>
+        <p>Mijn ik en dier</p>
+    </div>
     <ul>
         <li><a th:href="@{/home}">Home</a></li>
         <li><a th:href="@{/about}">About</a></li>
         <li><a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i></a></li>
     </ul>
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Dropdown
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li role="separator" class="divider"></li>
+            <li><a th:href="@{~/home/voeding}">Voeding</a></li>
+            <li><a th:href="@{~/home/habitat}">Habitat</a></li>
+            <li><a th:href="@{~/home/speelgoed}">Speelgoed</a></li>
+        </ul>
+    </div>
 </nav>
 
-
 </body>
-
 </html>

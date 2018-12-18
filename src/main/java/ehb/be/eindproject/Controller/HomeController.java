@@ -21,11 +21,6 @@ public class HomeController {
         return artikelRepository.findAll();
     }
 
-    @ModelAttribute("voeding")
-    public Iterable<Artikel> findByVoeding(){
-        return artikelRepository.findByCat("voeding");
-    }
-
     @RequestMapping(value = {"/","/home"},method = RequestMethod.GET)
     public String showHome(ModelMap map){
         return "home";
@@ -34,7 +29,6 @@ public class HomeController {
     @RequestMapping(value = "/home/{cat}", method = RequestMethod.GET)
     public  String showHomeByCategory(ModelMap map, @PathVariable(name="cat") String cat){
         map.addAttribute("all", artikelRepository.findByCat(cat));
-
         return "home";
     }
 }

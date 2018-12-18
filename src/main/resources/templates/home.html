@@ -14,35 +14,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Home</title>
 </head>
 <body>
-    <div class="text-center">
-        <h1>Co&Tom</h1>
-        <p>Mijn ik en dier</p>
-    </div>
-        <div th:replace="~{navigatie::#navbar}"></div>
-
-    <ull>
-        <li><a th:href="@{~/home/voeding}">Voeding</a></li>
-        <li><a th:href="@{~/home/habitat}">Habitat</a></li>
-        <li><a th:href="@{~/home/speelgoed}">Speelgoed</a></li>
-    </ull>
-
-            <div class="row" th:class="container-fluid">
-                <div th:class="img-thumbnail" th:each="artikel : ${all}">
-                    <div>
-                        <a th:href="@{~/info/{id} (id=${artikel.id})}"><img th:src="@{images/485x325.jpg}" height="150" width="285"/></a>
-                    </div>
-                    <div>
-                        <p><b th:text="${artikel.naam}"></b></p>
-                        <p th:text="'€' + ${artikel.prijs}"></p>
-                    </div>
-                    <div>
-                        <a><button type="submit">Add</button></a>
-                    </div>
+    <div th:replace="~{navigatie::#navbar}"></div>
+        <div class="row" th:class="container-fluid">
+            <div th:class="img-thumbnail" th:each="artikel : ${all}">
+                <div>
+                    <a th:href="@{~/info/{id} (id=${artikel.id})}"><img th:src="@{images/485x325.jpg}" height="150" width="285"/></a>
+                </div>
+                <div>
+                    <p><b th:text="${artikel.naam}"></b></p>
+                    <p th:text="'€' + ${artikel.prijs}"></p>
+                </div>
+                <div>
+                    <a><button type="submit">Add</button></a>
                 </div>
             </div>
+        </div>
 </body>
 <footer>
     <div class="text-center">
