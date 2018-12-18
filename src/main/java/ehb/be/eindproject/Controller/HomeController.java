@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -22,6 +23,13 @@ public class HomeController {
 
     @RequestMapping(value = {"/","/home"},method = RequestMethod.GET)
     public String showHome(ModelMap map){
+        return "home";
+    }
+
+    @RequestMapping(value = "/home/{cat}", method = RequestMethod.GET)
+    public  String showHomeByCategory(ModelMap map, @PathVariable(name="cat") String cat){
+        map.addAttribute("all", artikelRepository.findByCat(cat));
+
         return "home";
     }
 }
