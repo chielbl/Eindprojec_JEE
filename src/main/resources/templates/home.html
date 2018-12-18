@@ -24,38 +24,6 @@
         <li><a th:href="@{~/home/speelgoed}">Speelgoed</a></li>
     </ull>
 
-<table>
-    <thead>
-    <tr>
-        <th>Naam</th>
-        <th>Prijs</th>
-        <th>Merk</th>
-        <th>Categorie</th>
-        <th>Beschrijving</th>
-        <th>Details</th>
-        <th>Order</th>
-
-
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="artikel:${all}">
-        <td th:text="${artikel.naam}"></td>
-        <td th:text="${artikel.prijs}"></td>
-        <td th:text="${artikel.merk}"></td>
-        <td th:text="${artikel.cat}"></td>
-        <td th:text="${artikel.beschrijving}"></td>
-        <td><a th:href="@{/details/{id}(id=${artikel.id})}">Details</a></td>
-        <td><a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i></a></td>
-
-    </tr>
-
-    </tbody>
-</table>
-
-    </tr>
-    </thead>
-</table>
 
 </body>
 <footer>
