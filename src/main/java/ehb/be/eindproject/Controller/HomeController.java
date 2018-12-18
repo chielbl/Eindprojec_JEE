@@ -20,6 +20,11 @@ public class HomeController {
         return artikelRepository.findAll();
     }
 
+    @ModelAttribute("voeding")
+    public Iterable<Artikel> findByVoeding(){
+        return artikelRepository.findByCat("voeding");
+    }
+
     @RequestMapping(value = {"/","/home"},method = RequestMethod.GET)
     public String showHome(ModelMap map){
         return "home";
