@@ -22,10 +22,4 @@ public class InfoController {
         map.addAttribute("artikel", a);
         return "info";
     }
-    /*
-    @RequestMapping(value = "/back",method = RequestMethod.GET)
-    public String backToHome(Mapping mapping){
-        return "home";
-    }
-    */
 }
