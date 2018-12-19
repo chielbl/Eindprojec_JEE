@@ -3,6 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/css/navigatie.css}">
     <!-- W3shool -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
@@ -22,26 +23,27 @@
 </head>
 <body>
 <nav id="navbar" th:fragment="navbar" class="container-fluid">
-    <div class="text-center">
-        <h1>Co&Tom</h1>
+    <div id="title" class="text-center">
+        <h1><b>Co & Tom</b></h1>
         <p>Mijn ik en dier</p>
     </div>
-    <ul>
-        <li><a th:href="@{/home}">Home</a></li>
-        <li><a th:href="@{/about}">About</a></li>
-        <li><a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i></a></li>
-    </ul>
-    <div class="dropdown">
-        <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            category
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li role="separator" class="divider"></li>
-            <li><a th:href="@{~/home/voeding}">Voeding</a></li>
-            <li><a th:href="@{~/home/habitat}">Habitat</a></li>
-            <li><a th:href="@{~/home/speelgoed}">Speelgoed</a></li>
-        </ul>
+    <div class="container-fluid">
+        <a th:href="@{/home}"><button type="button" class="btn btn-default">Home</button></a>
+        <a th:href="@{/about}"><button type="button" class="btn btn-default">About</button></a>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Category
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a th:href="@{~/home/voeding}">Voeding</a></li>
+                <li><a th:href="@{~/home/habitat}">Habitat</a></li>
+                <li><a th:href="@{~/home/speelgoed}">Speelgoed</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="shoppingCar">
+        <a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i></a>
     </div>
 </nav>
 

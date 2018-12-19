@@ -3,6 +3,9 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{~/css/navigatie.css}">
+    <link rel="stylesheet" th:href="@{~/css/main.css}">
+    <link rel="stylesheet" th:href="@{~/css/about.css}">
     <!-- W3shool -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
@@ -21,18 +24,25 @@
 </head>
 <body>
 <div th:replace="~{navigatie::#navbar}"></div>
-    <div class="container-fluid">
-        <h2>Wie zijn we?</h2>
-        <p><emp>Tim en Jefrey:</emp>We zijn een dierenwinkel gespecializeerd in voeder en diensten voor thuisdieren zoals habitat en speelgoed. We zorgen voor het welzijn van de dieren en we maken het leven van onze klanten gemakkelijker door onze diensten online te zitten.</p>
+    <div class="panel panel-default" th:class="container-fluid">
+        <div class="panel-heading">
+            <h1 class="panel-title"><b>Wie zijn we?</b></h1>
+        </div>
+        <div class="panel-body">
+            <p><emp>Tim en Jefrey:</emp>We zijn een dierenwinkel gespecializeerd in voeder en diensten voor thuisdieren zoals habitat en speelgoed. We zorgen voor het welzijn van de dieren en we maken het leven van onze klanten gemakkelijker door onze diensten online te zitten.</p>
+        </div>
     </div>
-    <div class="container-fluid">
-        <h2>Adress</h2>
-        <p>Nijverheid 170</p>
-        <p>B-1070 Brussel</p>
-        <h2>Contact</h2>
-        <p>Telefoon: 03/444.55.66 </p>
-        <p>Email: test@test.be</p>
+    <div id="marginContact" class="panel panel-default" th:class="text-center">
+        <div class="panel-heading">
+            <h1 class="panel-title"><b>Contact</b></h1>
+        </div>
+        <div class="panel-body">
+            <p>Nijverheid 170</p>
+            <p>B-1070 Brussel</p>
+            <p>Telefoon: 03/444.55.66 </p>
+            <p>Email: test@test.be</p></div>
     </div>
+
 </body>
 <footer>
     <div class="text-center">
