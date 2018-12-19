@@ -21,7 +21,7 @@
     <title>Navigatie</title>
 </head>
 <body>
-<nav id="navbar" th:fragment="navbar">
+<nav id="navbar" th:fragment="navbar" class="container-fluid">
     <div class="text-center">
         <h1>Co&Tom</h1>
         <p>Mijn ik en dier</p>
@@ -32,8 +32,8 @@
         <li><a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i></a></li>
     </ul>
     <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Dropdown
+        <button class="btn btn-default" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            category
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
