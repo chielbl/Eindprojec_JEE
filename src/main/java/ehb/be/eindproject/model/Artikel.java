@@ -17,6 +17,8 @@ public class Artikel {
     private String merk;
     private String cat;
     private String beschrijving;
+    private int quantiteit;
+    private double totalprijs;
 
     public Artikel() {
     }
@@ -67,5 +69,21 @@ public class Artikel {
 
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
+    }
+
+    public double getQuantiteit() {
+        return quantiteit;
+    }
+
+    public void setQuantiteit(int quantiteit) {
+        this.quantiteit = quantiteit;
+    }
+
+    public double getTotalprijs() {
+        return totalprijs;
+    }
+
+    public void setTotalprijs(double totalprijs) {
+        this.totalprijs = totalprijs;
     }
 }

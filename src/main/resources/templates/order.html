@@ -17,11 +17,46 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $('#artikeltable').DataTable();
+        });
+    </script>
     <title>Order</title>
 </head>
 <body>
     <div th:replace="~{navigatie::#navbar}"></div>
+
+
+    <div class="row" th:class="container-fluid">
+        <div th:class="img-thumbnail" th:each="artikel : ${all}">
+            <div>
+                <a th:href="@{~/info/{id} (id=${artikel.id})}"><img th:src="@{images/485x325.jpg}" height="150" width="285"/></a>
+            </div>
+            <div>
+                <p><b th:text="${artikel.naam}"></b></p>
+                <p th:text="'€' + ${artikel.prijs}"></p>
+                <div class="container-fluid">
+                    <label>quantiteit</label>
+                    <imput type="text"class="container-fluid"/>
+                <p th:text="${artikel.quantiteit}"></p>
+                <p th:text="'€'+${artikel.totalprijs}"></p>
+            </div>
+            <div>
+                <a  class="btn btn-primary" th:href="@{~/order}" type="submit" ></a>
+            </div>
+
+        </div>
+    </div>
+    <div>
+
+
+        <a class="btn btn-primary" th:href="@{~/home}">Return</a>
+
+        <a  class="btn btn-primary" th:href="@{~/shop}">kopen</a>
+    </div>
+
 </body>
 <footer>
     <div class="text-center">
