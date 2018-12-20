@@ -23,6 +23,9 @@
 </head>
 <body>
     <div th:replace="~{navigatie::#navbar}"></div>
+    <div id="shoppingCar">
+        <a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i><span class="badge" th:text="${cart.size()}"></span></a>
+    </div>
         <div id="artikel" class="container">
             <div id="marginIMG" class="img-thumbnail">
                 <div>

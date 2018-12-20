@@ -24,17 +24,20 @@
 </head>
 <body>
     <div th:replace="~{navigatie::#navbar}"></div>
+    <div id="shoppingCar">
+        <a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i><span class="badge" th:text="${cart.size()}"></span></a>
+    </div>
         <div class="row" th:class="container-fluid">
             <div id="marginIMG" th:class="img-thumbnail" th:each="artikel : ${all}">
                 <div>
-                    <a th:href="@{~/info/{id} (id=${artikel.id})}"><img th:src="@{images/485x325.jpg}" height="150" width="285"/></a>
+                    <a th:href="@{~/info/{id} (id=${artikel.id})}"><img th:src="@{~/images/485x325.jpg}" height="150" width="285"/></a>
                 </div>
                 <div>
                     <p><b th:text="${artikel.naam}"></b></p>
                     <p th:text="'€' + ${artikel.prijs}"></p>
                 </div>
                 <div>
-                    <a><button type="submit">Add</button></a>
+                    <a th:href="@{~/order/{id} (id=${artikel.id})}"><button type="submit">Add</button></a>
                 </div>
             </div>
         </div>

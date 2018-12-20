@@ -12,6 +12,8 @@ nav{
 
 #shoppingCar{
     margin-left: 95%;
-    margin-bottom: 5px;
     font-size: 2em;
+}
+#margin-B {
+    margin-bottom: 20px;
 }

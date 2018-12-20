@@ -24,6 +24,9 @@
 </head>
 <body>
 <div th:replace="~{navigatie::#navbar}"></div>
+<div id="shoppingCar">
+    <a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i><span class="badge" th:text="${cart.size()}"></span></a>
+</div>
     <div class="panel panel-default" th:class="container-fluid">
         <div class="panel-heading">
             <h1 class="panel-title"><b>Wie zijn we?</b></h1>

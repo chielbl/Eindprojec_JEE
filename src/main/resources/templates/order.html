@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{~/css/navigatie.css}">
+    <link rel="stylesheet" th:href="@{~/css/main.css}">
     <!-- W3shool -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
@@ -23,6 +24,24 @@
 </head>
 <body>
     <div th:replace="~{navigatie::#navbar}"></div>
+    <div id="shoppingCar">
+        <a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i><span class="badge" th:text="${cart.size()}"></span></a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Product</th>
+            <th scope="col">Prijs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${cart}">
+            <td th:text="${order.naam}"></td>
+            <td th:text="'€'+${order.prijs}"></td>
+            <td><a th:href="@{~/delete/{id} (id=${order.id})}"><i class="glyphicon glyphicon-trash" style="color: red"></i></a></td>
+        </tr>
+        </tbody>
+    </table>
 </body>
 <footer>
     <div class="text-center">
