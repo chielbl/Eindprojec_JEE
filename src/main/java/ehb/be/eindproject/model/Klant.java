@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Klant {
@@ -11,11 +14,17 @@ public class Klant {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @NotBlank(message = "Can not be EMPTY!")
     private String naam;
+    @NotBlank(message = "Can not be EMPTY!")
     private String achternaam;
+    @NotBlank(message = "Can not be EMPTY!")
     private String straat;
     private int huisnr;
+    @NotBlank(message = "Can not be EMPTY!")
     private String gemeente;
+    @Email(message = "Email is invalid!")
+    @NotEmpty(message = "Can not be EMPTY!")
     private String email;
 
     public int getId() {

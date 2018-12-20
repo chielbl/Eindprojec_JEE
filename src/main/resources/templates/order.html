@@ -47,16 +47,19 @@
             <div class="col">
                 <label>Voornaam:</label>
                 <input th:field="*{naam}" type="text" class="form-control" placeholder="voornaam">
+                <p th:if="${#fields.hasErrors('naam')}" th:errors="*{naam}" th:class="errors"></p>
             </div>
             <div class="col">
                 <label>Achternaam:</label>
                 <input th:field="*{achternaam}" type="text" class="form-control" placeholder="achternaam">
+                <p th:if="${#fields.hasErrors('achternaam')}" th:errors="*{achternaam}" th:class="errors"></p>
             </div>
         </div>
         <div class="form-row">
             <div class="col">
                 <label>Straat:</label>
                 <input th:field="*{straat}" type="text" class="form-control" placeholder="straat">
+                <p th:if="${#fields.hasErrors('straat')}" th:errors="*{straat}" th:class="errors"></p>
             </div>
             <div class="col">
                 <label>Huisnummer:</label>
@@ -65,12 +68,14 @@
             <div class="col">
                 <label>Gemeente:</label>
                 <input th:field="*{gemeente}" type="text" class="form-control" placeholder="gemeente">
+                <p th:if="${#fields.hasErrors('gemeente')}" th:errors="*{gemeente}" th:class="errors"></p>
             </div>
         </div>
         <div class="form-row">
             <div class="col">
                 <label>Email:</label>
                 <input th:field="*{email}" type="text" class="form-control" placeholder="email">
+                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" th:class="errors"></p>
             </div>
         </div>
         <div id="marging-top-10px">
