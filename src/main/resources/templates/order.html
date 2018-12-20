@@ -27,21 +27,56 @@
     <div id="shoppingCar">
         <a th:href="@{/order}"><i class="fa fa-cart-arrow-down"></i><span class="badge" th:text="${cart.size()}"></span></a>
     </div>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Product</th>
-            <th scope="col">Prijs</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="order : ${cart}">
-            <td th:text="${order.naam}"></td>
-            <td th:text="'€'+${order.prijs}"></td>
-            <td><a th:href="@{~/delete/{id} (id=${order.id})}"><i class="glyphicon glyphicon-trash" style="color: red"></i></a></td>
-        </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Prijs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="order : ${cart}">
+                    <td th:text="${order.naam}"></td>
+                    <td th:text="'€'+${order.prijs}"></td>
+                    <td><a th:href="@{~/delete/{id} (id=${order.id})}"><i class="glyphicon glyphicon-trash" style="color: red"></i></a></td>
+                </tr>
+            </tbody>
+        </table>
+    <form class="container" th:method="post" th:action="@{~/order}" th:object="${klant}">
+        <div class="form-row">
+            <div class="col">
+                <label>Voornaam:</label>
+                <input th:field="*{naam}" type="text" class="form-control" placeholder="voornaam">
+            </div>
+            <div class="col">
+                <label>Achternaam:</label>
+                <input th:field="*{achternaam}" type="text" class="form-control" placeholder="achternaam">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <label>Straat:</label>
+                <input th:field="*{straat}" type="text" class="form-control" placeholder="straat">
+            </div>
+            <div class="col">
+                <label>Huisnummer:</label>
+                <input th:field="*{huisnr}" type="text" class="form-control" placeholder="nr">
+            </div>
+            <div class="col">
+                <label>Gemeente:</label>
+                <input th:field="*{gemeente}" type="text" class="form-control" placeholder="gemeente">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <label>Email:</label>
+                <input th:field="*{email}" type="text" class="form-control" placeholder="email">
+            </div>
+        </div>
+        <div id="marging-top-10px">
+            <a th:href="@{confirm}"><button type="submit" class="btn btn-primary">Confirm</button></a>
+        </div>
+    </form>
 </body>
 <footer>
     <div class="text-center">

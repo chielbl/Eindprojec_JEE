@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{~/css/navigatie.css}">
+    <link rel="stylesheet" th:href="@{~/css/main.css}">
     <!-- W3shool -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap CSS -->
@@ -18,31 +19,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <title>Navigatie</title>
+    <title>Confirm</title>
 </head>
 <body>
-<nav id="navbar" th:fragment="navbar" class="container-fluid">
-    <div id="title" class="text-center">
-        <h1><b>Co & Tom</b></h1>
-        <p>Mijn ik en dier</p>
+    <div th:replace="~{navigatie::#navbar}"></div>
+    <div class="container">
+        <h1>Bedankt!</h1>
+        <h3>wij hebben jou order goed ontvangen!</h3>
     </div>
-    <ul class="nav nav-tabs">
-        <li role="presentation" class="active"><a th:href="@{/home}">C&T</a></li>
-        <li role="presentation" ><a th:href="@{/home}">Home</a></li>
-        <li role="presentation" ><a th:href="@{/about}">About</a></li>
-        <li role="presentation" class="dropdown">
-            <a class="dropdown" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                Category <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-                <li><a th:href="@{~/home/voeding}">Voeding</a></li>
-                <li><a th:href="@{~/home/habitat}">Habitat</a></li>
-                <li><a th:href="@{~/home/speelgoed}">Speelgoed</a></li>
-            </ul>
-        </li>
-    </ul>
-</nav>
-
 </body>
+<footer>
+    <div class="text-center">
+        <p>&copy;2018 Chiel Bleyenbergh & Ilham Hbibi Ouali</p>
+    </div>
+</footer>
 </html>
